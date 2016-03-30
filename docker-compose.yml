@@ -1,0 +1,15 @@
+# es
+es:
+  build: ./es
+  container_name: es
+  ports:
+      - "9200:9200"
+
+# kibana
+kibana:
+  build: ./kibana
+  container_name: kibana
+  ports:
+      - "5601:5601"
+  links:
+     - es:es_alias
